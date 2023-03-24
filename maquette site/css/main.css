@@ -1,0 +1,132 @@
+/* ensemble  de la page*/
+body { 
+  margin: 0px; /* défini a 0 pour éviter tout espace entre le bord du navigateur et le contenu de la page */
+  font-family: "Quicksand", monospace; /* police de caractères défini sur quicksand ou monospace si pas dispo*/
+  background: #f2f2f2; /* fond défini sur ce gris clair */
+  color: #333333; /* couleur du text sur gris foncé*/
+}
+
+/* Nav Menu */
+
+/* définit les styles pour l'en-tête de la page, y compris la couleur de fond, la hauteur, la largeur, l'affichage, l'alignement des éléments, la position et la bordure inférieure. */
+#header {
+  background: white;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 1; /* ordre des couche */
+  border-bottom: 5px solid #1f84e3; /* hauteur de la barre en bas de la nav-bar et sa couleur */
+}
+
+  #header h1 { /* définit les styles pour le titre de l'en-tête */
+    font-weight: bold;
+    margin-left: 10%;
+    font-size: 20px;
+  }
+
+#header-img { /* définit les styles pour l'image de l'en-tête */
+  width: 65px;
+  height: 75px;
+  margin-left: 10px;
+}
+
+#nav-bar { /* définit les styles pour la barre de navigation */
+  display: none;
+  margin-right: 20px;
+}
+
+.nav-link { /* définit les styles pour les liens comme "localisation" de la barre de navigation */
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 11px;
+  padding-right: 11px;
+  color: #333333;
+}
+
+  .nav-link:hover { /* permet de changer la couleur des écritures lorsque la souris passe au dessus */
+    color: #1f84e3;
+  }
+
+.bouton { /* définit le style pour le bouton de connexion */
+  background-color: #1f84e3; /* couleur de fond du bouton */
+  border: none; /* pas de bordure */
+  color: white; /* couleur du texte */
+  padding: 2px 5px; /* espacement intérieur du bouton */
+  text-align: center; /* centrage du texte */
+  text-decoration: none; /* pas de soulignement du texte */
+  display: inline-block; /* permet de donner à l'élément un comportement de bloc mais sans le rendre sur une nouvelle ligne */
+  font-size: 20px; /* taille de police du texte */
+  cursor: pointer; /* curseur de la souris en forme de main */
+  border-radius: 15px; /* arrondir les bords du bouton */
+}
+
+/* Blank*/
+#blank1-div { /* espace vide qui pourra être remplacer par la bar de navigation lorsque l'on clique sur un lien de la nav-bar */
+  height: 80px; /* son épaisseur*/
+}
+
+#blank2-div {
+  height: 80px;
+}
+
+#blank3-div {
+  width: 80px;
+}
+
+#blank4-div {
+  height: 80px;
+}
+
+#blank5-div {
+  height: 250px;
+}
+
+/* Media rules */
+
+@media (min-width:640px) {
+  /* Écran d'une largeur d'au moins 640 pixels, la taille de la police du titre h1 est définie réudite et
+     la barre de navigation est masquée avec la règle pour une expérience de navigation optimisée sur mobile. */
+
+  /* nav menu */
+  #header h1 {
+    font-size: 24px; /*taille de la police*/
+  }
+
+  #nav-bar {
+    display: none; /* enlève la bar de navigation */
+  }
+}
+
+@media (min-width:960px) {
+
+  /* nav menu */
+  #header {
+    justify-content: space-between;
+  }
+
+    #header h1 {
+      font-size: 24px;
+    }
+
+  #nav-bar {
+    display: inherit;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+
+  @media (min-width:1280px) {
+
+    /* nav menu */
+    #header h1 {
+      font-size: 36px;
+    }
+
+    .nav-link {
+      font-size: 24px;
+    }
