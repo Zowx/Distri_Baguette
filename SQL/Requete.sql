@@ -8,16 +8,15 @@ VALUES
 (4, 'James la dégaine', '', 'La Rochelle', 17000, 'James007', 'degaine', 'james007@gmail.com');
 
 
-INSERT INTO Distributeur (id, nom, f_boulangerie, max_stock, stock_live, prix, rue, ville, code_postal, etat, seuil_de_declenchement, siefox_id, hygrométrie, temperature, horodatage)
+INSERT INTO Distributeur (id, nom, f_boulangerie, max_stock, prix, longitude, latitude, seuil_de_declenchement, sigfox_id)
 VALUES
-(1, 'Distri Piscine', 1, 60, , 1.1, 'Rue Léonce Mailho', 'La Rochelle', 17000, 1, 0, 20,,,),
-(2, 'Distri Mairie', 1, 65, , 1.1, "3 Pl. de l'Hôtel de ville", 'La Rochelle', 17000, 1, 0, 21,,,),
-(3, 'Distri Casino', 3, 50, , 1.2, '15 All. du Mail', 'La Rochelle', 17000, 1, 0, 22,,,),
-(4, 'Distri Verdun', 4, 70, , 1.15, 'Pl. de Verdun', 'La Rochelle', 17000, 1, 0, 23,,,),
-(5, 'Distri Vieux-Port', 1, 60, , 1.1, 'Vieux-Port', 'La Rochelle', 17000, 1, 0, 24,,,);
+(1, 'Distri Mairie', 1, 65, 1.1, '46.15994544190483', '-1.1518448288356529', 5, 21),
+(2, 'Distri Léonce', 3, 50, 1.2, '46.1694559152395', '-1.1530337134930408', 7, 22),
+(3, 'Distri Verdun', 4, 70, 1.15, '46.162171666763356', '-1.153929757671306', 8, 23),
+(4, 'Distri Vieux-Port', 1, 60, 1.1, '46.15564648571099', '-1.1662641711643467', 5, 24);
 
-INSERT INTO Vente(id, f_distributeur, nombre, horodatage)
+INSERT INTO Mesure(id, f_distributeur, état, stock_live, hygrométrie, température, horodatage)
 VALUES
-(1,1,,),
-(2,3,,),
-(3,4,,);
+(1, 1, 1, 20, 50, 15, '2023-04-2 10:10:05'),
+(2, 3, 0, 25, 60, 16, '2023-02-4 15:55:08'),
+(3, 4, 1, 15, 55, 13, '2023-01-20 23:40:35');

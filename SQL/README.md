@@ -6,7 +6,7 @@
     sudo apt-get upgrade
 
 
-### 2. Ensuite, on installe le paquet "apache2" afin d'obtenir la dernière version d'Apache 2.4 :
+### 2. Ensuite, on installe le paquet "apache2" afin d'obtenir la dernière version d'Apache 2.4.38 :
 
     sudo apt-get install -y apache2
 
@@ -149,16 +149,15 @@ TABLE Distributeur :
     f_boulangerie = clé étrangère FK
     nom = nom du distributeur
     max_stock = le stock max du distributeur
-    stock_live = le stock en temps réel
     prix = prix de la baguette
-    etat = état du distributeur en fonction ou non<
     seuil_de_declenchement = indicateur pour savoir si il faut remplir le distri
+ 
+
+TABLE Mesure :
+    f_distributeur = clé étrangère FK
+    etat = état du distributeur en fonction ou non
+    stock_live = le stock en temps réel
     hygrométrie = %
     temperature = °C
     horodatage = date + heure
-
-TABLE Vente :
-    f_distributeur = clé étrangère FK
-    horodatage = date + heure
-    nombre = nombre de vente
 ```
