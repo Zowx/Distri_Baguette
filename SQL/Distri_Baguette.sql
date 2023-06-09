@@ -1,6 +1,9 @@
 -- Création de la BBD
 CREATE DATABASE `Distri_Baguette`;
 
+-- Pour utiliser la BDD
+USE Distri_Baguette;
+
 -- Création de la table Boulangerie 
 CREATE TABLE `Boulangerie` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
