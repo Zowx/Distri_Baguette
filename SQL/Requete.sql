@@ -2,7 +2,7 @@
 
 INSERT INTO Boulangerie (id, nom, rue, ville, code_postal, user , password, email)
 VALUES
-(1, 'Baguette bien chaude', '', 'La Rochelle', 17000, 'Armand', 'Armand1', 'baguette.chaude@gmail.com'),
+(1, 'Baguette de la plaine', '', 'La Rochelle', 17000, 'Armand', 'Armand1', 'baguette.plaine@gmail.com'),
 (2, 'Martin pâtissier', '', 'La Rochelle', 17000, 'martinlp', 'LPMartin', 'martin.patissier@gmail.com'),
 (3, 'La Boulangerie de Jonatan', '', 'La Rochelle', 17000, 'Jojo', 'jojo17', 'jonatan@gmail.com'),
 (4, 'James la dégaine', '', 'La Rochelle', 17000, 'James007', 'degaine', 'james007@gmail.com');

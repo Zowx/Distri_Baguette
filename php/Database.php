@@ -16,7 +16,7 @@ class Database {
         $this->conn = mysqli_connect($this->host, $this->username, $this->password, $this->database);
 
         if (!$this->conn) {
-            die("Connection failed: " . mysqli_connect_error());
+            die("\n Connection failed: " . mysqli_connect_error());
         }
     }
 
@@ -28,9 +28,9 @@ class Database {
 
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "Data added successfully \n";
+            echo "\n Boulangerie data added successfully";
         } else {
-            echo "\n Error adding data: " . mysqli_error($this->conn);
+            echo "\n Error adding Boulangerie data: " . mysqli_error($this->conn);
         }
     }
 
@@ -41,9 +41,9 @@ class Database {
         $sql = "INSERT INTO Distributeur ($fields) VALUES ($values)";
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data added successfully";
+            echo "\n Distributeur data added successfully";
         } else {
-            echo "\n Error adding data: " . mysqli_error($this->conn);
+            echo "\n Error adding Distributeur data: " . mysqli_error($this->conn);
         }
     }
 
@@ -54,9 +54,9 @@ class Database {
         $sql = "INSERT INTO Mesure ($fields) VALUES ($values)";
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data added successfully";
+            echo "\n Mesure data added successfully";
         } else {
-            echo "\n Error adding data: " . mysqli_error($this->conn);
+            echo "\n Error adding Mesure data: " . mysqli_error($this->conn);
         }
     }
 
@@ -70,9 +70,9 @@ class Database {
         $sql = "UPDATE Boulangerie SET $fields WHERE nom = $name";
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data updated successfully";
+            echo "\n Boulangerie data updated successfully";
         } else {
-            echo "\n Error updating data: " . mysqli_error($this->conn);
+            echo "\n Error updating Boulangerie data: " . mysqli_error($this->conn);
         }
     }
 
@@ -86,9 +86,9 @@ class Database {
         $sql = "UPDATE Distributeur SET $fields WHERE nom = $name";
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data updated successfully";
+            echo "\n Distributeur data updated successfully";
         } else {
-            echo "\n Error updating data: " . mysqli_error($this->conn);
+            echo "\n Error updating Distributeur data: " . mysqli_error($this->conn);
         }
     }
 
@@ -102,9 +102,9 @@ class Database {
         $sql = "UPDATE Mesure SET $fields WHERE id = $id";
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data updated successfully";
+            echo "\n Mesure data updated successfully";
         } else {
-            echo "\n Error updating data: " . mysqli_error($this->conn);
+            echo "\n Error updating Mesure data: " . mysqli_error($this->conn);
         }
     }
 
@@ -196,9 +196,9 @@ class Database {
         }
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data deleted successfully";
+            echo "\n Boulangerie data deleted successfully";
         } else {
-            echo "\n Error deleting data: " . mysqli_error($this->conn);
+            echo "\n Error deleting Boulangerie data: " . mysqli_error($this->conn);
         }
     }
 
@@ -215,9 +215,9 @@ class Database {
         }
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data deleted successfully";
+            echo "\n Distributeur data deleted successfully";
         } else {
-            echo "\n Error deleting data: " . mysqli_error($this->conn);
+            echo "\n Error deleting Distributeur data: " . mysqli_error($this->conn);
         }
     }
 
@@ -234,34 +234,40 @@ class Database {
         }
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "\n Data deleted successfully";
+            echo "\n Mesure data deleted successfully";
         } else {
-            echo "\n Error deleting data: " . mysqli_error($this->conn);
+            echo "\n Error deleting Mesure data: " . mysqli_error($this->conn);
         }
     }
 
     // Fonction pour supprimer la table Boulangerie
     public function delete_boulangerie_table() {
-        $pdo = $this->connect();
         $sql = "DROP TABLE IF EXISTS Boulangerie;";
-        $pdo->exec($sql);
-        $pdo = null;
+        if (mysqli_query($this->conn, $sql)) {
+            echo "\n Boulangerie table deleted successfully";
+        } else {
+            echo "\n Error deleting Boulangerie table: " . mysqli_error($this->conn);
+        }
     }
 
     // Fonction pour supprimer la table Distributeur
     public function delete_distributeur_table() {
-        $pdo = $this->connect();
         $sql = "DROP TABLE IF EXISTS Distributeur;";
-        $pdo->exec($sql);
-        $pdo = null;
+        if (mysqli_query($this->conn, $sql)) {
+            echo "\n Distributeur table deleted successfully";
+        } else {
+            echo "\n Error deleting Distributeur table: " . mysqli_error($this->conn);
+        }
     }
 
     // Fonction pour supprimer la table Mesure
     public function delete_mesure_table() {
-        $pdo = $this->connect();
         $sql = "DROP TABLE IF EXISTS Mesure;";
-        $pdo->exec($sql);
-        $pdo = null;
+        if (mysqli_query($this->conn, $sql)) {
+            echo "\n Mesure table deleted successfully";
+        } else {
+            echo "\n Error deleting Mesure table: " . mysqli_error($this->conn);
+        }
     }
 
     // Fermez la connexion à la base de données

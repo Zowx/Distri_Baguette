@@ -2,7 +2,7 @@
 require_once 'Database.php';
 
 // Créer une instance de la classe
-$db = new Database('localhost', 'phpmyadmin', 'root', 'Distri_Baguette');
+$db = new Database('localhost', 'id18497221_zowx', 'Z0wx@754', 'id18497221_distri_baguette');
 
 // Insérer des données dans la table "Boulangerie"
 $data = array(
@@ -25,26 +25,26 @@ $data = array(
     'longitude' => '46.14723326861701',
     'latitude' => '-1.1536701388292216',
     'seuil_de_declenchement' => 5,
-    'siefox_id' => 25,
+    'sigfox_id' => 25,
 );
 $db->insert_distributeur($data);
 
 // Insérer des données dans la table "Mesure"
 $data = array(
     'f_distributeur' => 3,
-    'etat' => 1,
+    'état' => 1,
     'stock_live' => 20,
     'hygrométrie' => 80,
-    'temperature' => 14,
+    'température' => 14,
     'horodatage' => '2023-05-11 08:43:35',
 );
 $db->insert_mesure($data);
 
 // Mettre à jour des données dans la table "Boulangerie"
 $data = array(
-    'user' => 'Doe123',
+    'user' => 'Jojo17',
 );
-$db->update_boulangerie($data, Doe);
+$db->update_boulangerie($data, 'La Boulangerie de Jonatan');
 
 // Mettre à jour des données dans la table "Distributeur"
 $data = array(
@@ -64,6 +64,18 @@ $db->select_boulangerie();
 // Récupérer des données dans la table "Distributeur"
 $db->select_distributeur();
 
-// // Récupérer des données dans la table "Mesure"
+// Récupérer des données dans la table "Mesure"
 $db->select_mesure();
+
+
+/* 
+// Supprimer la table Boulangerie
+$db->delete_boulangerie_table();
+
+// Supprimer la table Distributeur
+$db->delete_distributeur_table();
+
+// Supprimer la table Mesure
+$db->delete_mesure_table();
+*/
 ?>

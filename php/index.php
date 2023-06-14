@@ -1,9 +1,9 @@
 <?php
 // Paramètres de connexion à la base de données
-$host = "172.20.233.50"; // l'adresse IP du serveur de base de données
-$dbname = "Distri_Baguette";
-$username = "phpmyadmin";
-$password = "root";
+$host = "localhost"; // l'adresse IP du serveur de base de données ou localhost
+$dbname = "id18497221_distri_baguette";
+$username = "id18497221_zowx";
+$password = "Z0wx@754";
 
 // Connexion à la base de données
 try {

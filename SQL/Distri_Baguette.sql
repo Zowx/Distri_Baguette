@@ -7,33 +7,33 @@ USE Distri_Baguette;
 -- Création de la table Boulangerie 
 CREATE TABLE `Boulangerie` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL,
-  `rue` varchar(50) NOT NULL,
-  `ville` varchar(50) NOT NULL,
+  `nom` varchar(25) NOT NULL,
+  `rue` varchar(30) NOT NULL,
+  `ville` varchar(30) NOT NULL,
   `code_postal` integer(5) NOT NULL,
-  `user` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `user` varchar(10) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `email` varchar(40) NOT NULL
 );
 
 -- Création de la table Distributeur
 CREATE TABLE `Distributeur` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL,
+  `nom` varchar(20) NOT NULL,
   `f_boulangerie` integer NOT NULL,
   `max_stock` integer NOT NULL,
   `prix` integer NOT NULL,
   `longitude` varchar(50) NOT NULL,
   `latitude` varchar(50) NOT NULL,
-  `seuil_de_declenchement` bool NOT NULL,
+  `seuil_de_declenchement` boolean NOT NULL,
   `sigfox_id` integer NOT NULL
 );
 
--- Création de la table Vente
+-- Création de la table Mesures
 CREATE TABLE `Mesure` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `f_distributeur` integer NOT NULL,
-  `état` bool,
+  `état` boolean,
   `stock_live` integer,
   `hygrométrie` integer NOT NULL,
   `température` integer NOT NULL,
